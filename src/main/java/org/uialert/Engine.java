@@ -31,7 +31,7 @@ public class Engine {
 
             @Override
             public void reshape(GLAutoDrawable glautodrawable, int x, int y, int width, int height) {
-                setup(glautodrawable.getGL().getGL2(), width, height);
+                //setup(glautodrawable.getGL().getGL2(), width, height);
                 //System.out.println("Ddd");
             }
 
@@ -58,10 +58,12 @@ public class Engine {
     private static void setup(GL2 gl2, int width, int height) {
         //настройка сетки отсчёта
         //если всё закоментировать то система координат будет начинться с середины экрана
+
         gl2.glMatrixMode(GL2.GL_PROJECTION);
         gl2.glLoadIdentity();
 
         // начало системы координат в левом нижнем углу с шириной и высотой, как и окно
+
         GLU glu = new GLU();
         glu.gluOrtho2D(0.0f, width, 0.0f, height);
 
@@ -88,8 +90,7 @@ public class Engine {
     }
 
     public int getFPS(){
-//        loopEngine.
-        return loopEngine.fps;
+        return loopEngine.getFps();
     }
 
     interface EventsEngine {

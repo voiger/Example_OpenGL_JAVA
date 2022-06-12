@@ -21,7 +21,7 @@ public class LoopEngine implements Runnable {
         this.engineListener = engineListener;
     }
 
-    public int fps = 0;
+    private int fps = 0;
     private int fpsTemp = 0;
 
     @Override
@@ -49,5 +49,9 @@ public class LoopEngine implements Runnable {
             engineListener.update(delta);
             glcanvas.display();
         }
+    }
+
+    public int getFps() {
+        return fps;
     }
 }
